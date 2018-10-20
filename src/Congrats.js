@@ -9,7 +9,7 @@ export default (props) => {
   if (props.success) {
     return (
       <div data-test="component-congrats">
-        <span test-data="congrats-message">
+        <span data-text="congrats-message">
           Congratulations! You guessed the word!
         </span>
       </div>
