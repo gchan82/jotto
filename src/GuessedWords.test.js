@@ -4,7 +4,7 @@ import { findByTestAttr, checkProps } from "../test/testUtils";
 import GuessedWords from "./GuessedWords";
 
 const defaultProps = {
-  guessedWords: [{ guessedWord: "train", letterMatchCount: "3" }]
+  guessedWords: [{ guessedWord: "train", letterMatchCount: 3 }]
 };
 
 /** ShallowWrapper for GuessedWords component
@@ -30,9 +30,10 @@ describe("if there are no words guessed", () => {
     const component = findByTestAttr(wrapper, "component-guessed-words");
     expect(component.length).toBe(1);
   });
-  test("renders instructions to guess a word", () => {});
-  const instructions = findByTestAttr(wrapper, "guess-instructions");
-  expect(instructions.test().length).not.toBe(0);
+  test("renders instructions to guess a word", () => {
+    const instructions = findByTestAttr(wrapper, "guess-instructions");
+    expect(instructions.text().length).not.toBe(0);
+  });
 });
 describe("if there are words guessed", () => {
   let wrapper;
@@ -49,11 +50,11 @@ describe("if there are words guessed", () => {
     expect(component.length).toBe(1);
   });
   test('renders "guessed words" section', () => {
-    const guessedWordsNode = findByTestAttr(wrapper, "guessed-words");
-    expect(guessedWordsNode.length).toBe(1);
+    const guessedWordNodes = findByTestAttr(wrapper, "guessed-words");
+    expect(guessedWordNodes.length).toBe(1);
   });
   test("correct number of guessed words", () => {
-    const guessedWordNodes = findByTestAttr(wrapper, "guessed-word");
-    expect(guessedWordNodes.length).toBe(guessedWords.length);
+    const guessedWordsNode = findByTestAttr(wrapper, "guessed-word");
+    expect(guessedWordsNode.length).toBe(guessedWords.length);
   });
 });

@@ -9,9 +9,9 @@ const GuessedWords = props => {
     );
   } else {
     const guessedWordsRows = props.guessedWords.map((word, index) => (
-      <tr data-test="guessed-word" key={index}>
+      <tr data-test="guessed-word" key={word.guessedWord}>
         <td>
-          {word.guessedWord}
+        {word.guessedWord}
         </td>
         <td>
           {word.letterMatchCount}
@@ -21,9 +21,12 @@ const GuessedWords = props => {
     contents = (
 <div data-test="guessed-words">
 <h3>Guessed Words</h3>
-<table>
-<thead>
-<tr><th>Guess</th><th>Matching Letters</th></tr>
+<table className="table table-sm">
+<thead className="thead-light">
+<tr>
+<th>Guess</th>
+<th>Matching Letters</th>
+</tr>
 </thead></table>
 {guessedWordsRows}
 </div>
