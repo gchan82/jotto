@@ -27,8 +27,11 @@ const GuessedWords = props => {
 <th>Guess</th>
 <th>Matching Letters</th>
 </tr>
-</thead></table>
+</thead>
+<tbody>
 {guessedWordsRows}
+</tbody>
+</table>
 </div>
     );
   }
