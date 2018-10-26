@@ -1,3 +1,5 @@
+import {actionTypes} from '../actions';
+
 /**
  * @param  {} state=initialState
  * @param  {} action
@@ -5,13 +7,13 @@
  * @param  {return{...state}default:returnstate}}} {casetypeName
  * @returns returnstate
  */
-const initialState = {};
 
-export default (state = initialState, action) => {
- // switch (action.type) {
-    //case typeName:
-    // return { ...state }
+ export default (state = false, action) => {
+  switch (action.type) {
+    case (actionTypes.CORRECT_GUESS):
+    return true;
 
-   // default:
-      return null;
+    default:
+      return state;
   }
+}
